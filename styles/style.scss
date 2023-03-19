@@ -1,0 +1,13 @@
+@import "./fonts.scss";
+@import "./colors.scss";
+@import "./reset.scss";
+
+body {
+    font-family: var(--ff-primary);
+}
+
+@import "layouts";
+
+@import "components";
+
+@import "sections";

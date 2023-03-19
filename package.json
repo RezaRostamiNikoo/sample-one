@@ -1,0 +1,17 @@
+{
+  "name": "simple-blog-template",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run watch-sass\" \"vite\"",
+    "build": "npm run watch-sass && vite build",
+    "preview": "npm run watch-sass && vite preview",
+    "watch-sass": "sass --watch ./styles/style.scss:./style.css"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "sass": "^1.59.3",
+    "vite": "^4.2.0"
+  }
+}

@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;800&display=swap");
+:root {
+  --ff-primary: "Work Sans", sans-serif;
+  --ff-logo: 'Plus Jakarta Sans', sans-serif;
+  --ff-body: var(--ff-primary);
+  --ff-heading: var(--ff-primary);
+  --fw-redular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fs-100: 0.875rem;
+  --fs-200: 1rem;
+  --fs-300: 1.125rem;
+  --fs-400: 1.25rem;
+  --fs-500: 1.5rem;
+  --fs-600: 1.785rem;
+  --fs-700: 2.25rem;
+  --fs-body: var(--fs-200);
+  --fs-page-title: var(--fs-600);
+  --fs-tag: var(--fs-100);
+  --fs-heading: var(--fs-700);
+  --fs-section-heading: var(--fs-600);
+  --fs-card-title: var(--fs-500);
+  --fs-blog-author: var(--fs-200);
+  --fs-blog-data: var(--fs-200);
+  --fs-nav: var(--fs-200);
+  --fs-footer-section-titles: var(--fs-300); }
+
+* {
+  font-family: inherit; }
+
+@use "sass:color";
+:root {
+  --clr-blue-300: #4b6bfb;
+  --clr-gray-100: #e8e8ea;
+  --clr-gray-400: #97989f;
+  --bg-tag: var(--clr-blue-300);
+  --bg-tag-inverted: #4b6bfb0d;
+  --text-tag-inverted: var(--clr-blue-300);
+  --border-post-card: var(--clr-gray-100);
+  --text-author: var(--clr-gray-400);
+  --clr-button: var(--clr-gray-400); }
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+html, body {
+  height: 100%; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-family: var(--ff-primary); }
+
+.container {
+  --max-width: 76rem;
+  --padding: 1rem;
+  width: min(var(--max-width), 100% - 2 * var(--padding));
+  margin: auto; }
+
+.tags span {
+  padding: 0.25rem 0.625rem; }
+
+.author {
+  display: flex;
+  align-items: center;
+  color: var(--text-author); }
+  .author img {
+    margin-right: 0.75rem; }
+  .author > *:last-child {
+    margin-left: 1.25rem; }
+
+header {
+  --header-height: 6.5rem;
+  height: var(--header-height); }
+  header .container {
+    height: inherit; }
+    header .container nav {
+      display: flex;
+      height: inherit;
+      align-items: center; }
+      header .container nav .logo {
+        font-family: var(--ff-logo);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-right: auto; }
+        header .container nav .logo strong {
+          font-weight: 900; }
+      header .container nav > ul {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem; }
+        header .container nav > ul > li > a {
+          text-decoration: none; }
+      header .container nav > input[type="search"] {
+        margin-left: auto; }
+
+.hero {
+  margin-top: 1.5rem; }
+  .hero .container {
+    position: relative; }
+    .hero .container > img {
+      width: 100%; }
+    .hero .container .hero-content {
+      --hero-card-radius: 0.75rem;
+      position: absolute;
+      max-width: 50%;
+      border-radius: var(--hero-card-radius);
+      inset: auto auto -4rem 4rem;
+      padding: 2.5rem;
+      background-color: white;
+      box-shadow: 0px 12px 24px -6px rgba(24, 26, 42, 0.12); }
+      .hero .container .hero-content > h1 {
+        font-size: var(--fs-heading);
+        font-weight: var(--fw-semibold);
+        line-height: 2.5rem;
+        margin-bottom: 1.5rem; }
+      .hero .container .hero-content .tags {
+        margin-bottom: 1rem;
+        color: white; }
+        .hero .container .hero-content .tags span {
+          padding: 0.25rem 0.625rem;
+          background-color: var(--bg-tag);
+          border-radius: 0.375rem; }
+
+.latest-posts {
+  margin-top: 7rem; }
+  .latest-posts .container h2 {
+    font-size: var(--fs-section-heading);
+    font-weight: var(--fw-bold); }
+  .latest-posts .container > ul {
+    margin-top: 2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+    gap: 1.25rem; }
+    .latest-posts .container > ul > li {
+      --post-card-radius: 0.75rem;
+      border-radius: var(--post-card-radius);
+      border: 1px solid var(--border-post-card);
+      padding: 1rem; }
+      .latest-posts .container > ul > li > img {
+        width: 100%; }
+      .latest-posts .container > ul > li .content {
+        margin-top: 1rem;
+        padding: 0.5rem; }
+        .latest-posts .container > ul > li .content .tags span {
+          color: var(--text-tag-inverted);
+          background-color: var(--bg-tag-inverted); }
+        .latest-posts .container > ul > li .content > h3 {
+          margin-top: 1rem;
+          font-size: var(--fs-card-title);
+          font-weight: var(--fw-semibold); }
+        .latest-posts .container > ul > li .content .author {
+          margin-top: 1.25rem; }
+  .latest-posts .container > .button {
+    background-color: white;
+    border: 1px solid var(--clr-button);
+    padding: 0.75rem 1.25rem;
+    margin-top: 2rem;
+    margin-inline: auto;
+    display: block;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1); }
+    .latest-posts .container > .button:hover {
+      background-color: var(--clr-button);
+      color: white; }
+
+footer {
+  margin-top: 7rem; }
+  footer .container .info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; }
+
+/*# sourceMappingURL=style.css.map */

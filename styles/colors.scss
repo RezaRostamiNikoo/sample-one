@@ -1,0 +1,15 @@
+@use "sass:color";
+
+:root {
+    --clr-blue-300: #4b6bfb;
+    --clr-gray-100: #e8e8ea;
+    --clr-gray-400: #97989f;
+
+    --bg-tag: var(--clr-blue-300);
+    --bg-tag-inverted: #4b6bfb0d;
+    --text-tag-inverted: var(--clr-blue-300);
+    --border-post-card: var(--clr-gray-100);
+
+    --text-author: var(--clr-gray-400);
+    --clr-button: var(--clr-gray-400);
+}

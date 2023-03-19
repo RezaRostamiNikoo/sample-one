@@ -1,0 +1,37 @@
+header {
+    --header-height: 6.5rem;
+    height: var(--header-height);
+
+    .container {
+        height: inherit;
+
+        nav {
+            display: flex;
+            height: inherit;
+            align-items: center;
+            .logo {
+                font-family: var(--ff-logo);
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin-right: auto;
+                strong {
+                    font-weight: 900;
+                }
+            }
+            > ul {
+                display: flex;
+                align-items: center;
+                gap: 2.5rem;
+                > li {
+                    > a {
+                        text-decoration: none;
+                    }
+                }
+            }
+            > input[type="search"] {
+                margin-left: auto;
+            }
+        }
+    }
+}
