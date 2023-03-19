@@ -1,7 +1,6 @@
-
 .container {
-    --max-width: 76rem; // 76rem = 1216px
-    --padding: 1rem;
-    width: min(var(--max-width), 100% - 2 * var(--padding));
+    --container-max-width: 70rem; // 76rem = 1216px
+    --container-padding-inline: 1rem;
+    width: min(var(--container-max-width), 100% - 2 * var(--container-padding-inline));
     margin: auto;
 }

@@ -31,8 +31,9 @@ section {
 body {
 	line-height: 1;
 }
-html,body{
-	height: 100%;
+html,
+body {
+	min-height: 100%;
 }
 ol,
 ul {
@@ -52,4 +53,7 @@ q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+strong {
+	font-weight: 700;
 }

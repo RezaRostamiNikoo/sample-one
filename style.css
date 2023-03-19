@@ -31,8 +31,9 @@ section {
 body {
   line-height: 1; }
 
-html, body {
-  height: 100%; }
+html,
+body {
+  min-height: 100%; }
 
 ol,
 ul {
@@ -52,6 +53,9 @@ q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0; }
+
+strong {
+  font-weight: 700; }
 
 :root {
   --ff-primary: "Work Sans", sans-serif;
@@ -89,19 +93,26 @@ body {
 @use "sass:color";
 :root {
   --clr-blue-300: #4b6bfb;
-  --clr-gray-100: #e8e8ea;
+  --clr-gray-100: #f6f6f7;
+  --clr-gray-200: #e8e8ea;
   --clr-gray-400: #97989f;
+  --clr-gray-500: #696a75;
   --bg-tag: var(--clr-blue-300);
   --bg-tag-inverted: #4b6bfb0d;
   --text-tag-inverted: var(--clr-blue-300);
-  --border-post-card: var(--clr-gray-100);
+  --border-post-card: var(--clr-gray-200);
   --text-author: var(--clr-gray-400);
-  --clr-button: var(--clr-gray-400); }
+  --clr-button: var(--clr-gray-400);
+  --clr-footer-text: var(--clr-gray-500);
+  --clr-bg-footer-section: var(--clr-gray-100);
+  --clr-footer-copyright-section-border: var(--clr-gray-200);
+  --clr-footer-form-input-border: var(--clr-gray-200);
+  --clr-footer-form-button: var(--clr-blue-300); }
 
 .container {
-  --max-width: 76rem;
-  --padding: 1rem;
-  width: min(var(--max-width), 100% - 2 * var(--padding));
+  --container-max-width: 70rem;
+  --container-padding-inline: 1rem;
+  width: min(var(--container-max-width), 100% - 2 * var(--container-padding-inline));
   margin: auto; }
 
 .tags span {
@@ -124,7 +135,8 @@ header {
     header .container nav {
       display: flex;
       height: inherit;
-      align-items: center; }
+      align-items: center;
+      flex-wrap: wrap; }
       header .container nav .logo {
         font-family: var(--ff-logo);
         display: flex;
@@ -215,9 +227,85 @@ header {
       color: white; }
 
 footer {
-  margin-top: 7rem; }
+  color: var(--clr-footer-text);
+  background-color: var(--clr-bg-footer-section);
+  margin-top: 7rem;
+  padding-top: 4rem; }
+  footer .container h4 {
+    font-size: var(--fs-footer-section-titles);
+    font-weight: var(--fw-semibold);
+    margin-bottom: 1.5rem;
+    color: black; }
   footer .container .info {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; }
+    footer .container .info .about {
+      padding-inline-end: 1.5rem; }
+      footer .container .info .about p {
+        line-height: 1.5rem; }
+      footer .container .info .about p:nth-of-type(2) {
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem; }
+    footer .container .info nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr; }
+      footer .container .info nav ul li + li {
+        margin-top: 1rem; }
+      footer .container .info nav ul a {
+        text-decoration: none;
+        color: inherit; }
+    footer .container .info form {
+      color: inherit;
+      width: 100%;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      footer .container .info form h4 {
+        margin-bottom: unset; }
+      footer .container .info form h5 {
+        margin-top: 0.5rem; }
+      footer .container .info form input[type="email"],
+      footer .container .info form .button {
+        border-radius: 0.375rem;
+        width: 100%;
+        height: 3rem;
+        box-sizing: border-box;
+        color: inherit; }
+      footer .container .info form input[type="email"] {
+        margin-top: 2rem;
+        outline: none !important;
+        border: 1px solid var(--clr-footer-form-input-border);
+        padding: 0.75rem 3rem 0.75rem 1rem; }
+      footer .container .info form .button {
+        margin-top: 0.5rem;
+        background-color: var(--clr-footer-form-button);
+        color: white; }
+  footer .container .copyright-and-policies {
+    min-height: 7.5rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 4rem;
+    border-top: 1px solid var(--clr-footer-copyright-section-border); }
+    footer .container .copyright-and-policies .logo-and-copyright {
+      margin-inline-end: auto;
+      display: grid;
+      grid-template: "logo logo-text" auto "logo copyright" auto;
+      gap: 0.5rem; }
+      footer .container .copyright-and-policies .logo-and-copyright .logo {
+        grid-area: logo; }
+      footer .container .copyright-and-policies .logo-and-copyright .logo-text {
+        grid-area: logo-text;
+        font-family: var(--ff-logo);
+        color: black; }
+      footer .container .copyright-and-policies .logo-and-copyright .copyright {
+        grid-area: copyright; }
+    footer .container .copyright-and-policies span:not(:first-child) a {
+      text-decoration: none;
+      color: inherit; }
 
 /*# sourceMappingURL=style.css.map */

@@ -9,6 +9,7 @@ header {
             display: flex;
             height: inherit;
             align-items: center;
+            flex-wrap: wrap;
             .logo {
                 font-family: var(--ff-logo);
                 display: flex;
